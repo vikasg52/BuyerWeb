@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="2" passed="2">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="69600" started-at="2016-05-04T10:31:41Z" finished-at="2016-05-04T10:32:51Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="69600" started-at="2016-05-04T10:31:41Z" finished-at="2016-05-04T10:32:51Z">
+      <class name="com.makaan.Test.LoginTest">
+        <test-method status="PASS" signature="InitiateDriver()[pri:0, instance:com.makaan.Test.LoginTest@37d741af]" name="InitiateDriver" is-config="true" duration-ms="56512" started-at="2016-05-04T16:01:41Z" finished-at="2016-05-04T16:02:38Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- InitiateDriver -->
+        <test-method status="PASS" signature="ValidateLoginButton()[pri:0, instance:com.makaan.Test.LoginTest@37d741af]" name="ValidateLoginButton" duration-ms="3215" started-at="2016-05-04T16:02:38Z" finished-at="2016-05-04T16:02:41Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ValidateLoginButton -->
+        <test-method status="PASS" signature="ValidateMakaanLogin()[pri:0, instance:com.makaan.Test.LoginTest@37d741af]" name="ValidateMakaanLogin" duration-ms="9755" started-at="2016-05-04T16:02:41Z" finished-at="2016-05-04T16:02:51Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ValidateMakaanLogin -->
+        <test-method status="PASS" signature="Close()[pri:0, instance:com.makaan.Test.LoginTest@37d741af]" name="Close" is-config="true" duration-ms="101" started-at="2016-05-04T16:02:51Z" finished-at="2016-05-04T16:02:51Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Close -->
+      </class> <!-- com.makaan.Test.LoginTest -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
