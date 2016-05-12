@@ -11,72 +11,116 @@ public class LoginTest {
 
 	LoginMiddleware mw = new LoginMiddleware();
 
-
-	
 	@BeforeClass
-	public void InitiateDriver() {
-		try {
-			System.out.println("Inside Test Initiate Driver");
-			
+	public void InitiateDriver() throws Exception {
+		System.out.println("Inside Test Initiate Driver");
+		try{
 			mw.OpenURL();
-
-		} catch (Exception e) {
-			e.printStackTrace();
-			Assert.assertTrue(false, "not able to Initiate Driver due to exception");
+		}catch(Exception e){
+		
+		Assert.assertTrue(false, "not able to Initiate Driver due to exception");
 		}
-
 	}
 
-	@Test 
-	public void ValidateLoginButton() {
-		try {
-			System.out.println("Inside Test Validate Login");
-			
-			mw.LoginForm();
-			Thread.sleep(3000);
-		} catch (Exception e) {
-			e.printStackTrace();
+	@Test(priority = 1)
+	public void ValidateLoginButton() throws Exception {
+		System.out.println("Inside Test Validate Login Button");
+		if (mw.LoginForm()) {
+			System.out.println("Login Button is present");
+		} else {
 			Assert.assertTrue(false, "not able to validate Login button");
 		}
-		
 	}
-	
-	@Test  (enabled = false)
-	public void ValidateSocialLogin() {
-		try {
-			System.out.println("Inside Test Validate Login");
-			
-			mw.SocialLogin();
-			Thread.sleep(3000);
-		} catch (Exception e) {
-			e.printStackTrace();
+
+	@Test(priority = 2)
+	// @Test (enabled = false)
+	public void ValidateSocialLogin() throws Exception {
+		System.out.println("Inside Test Validate Social Login");
+		if (mw.SocialLogin()) {
+			System.out.println("social login present");
+		} else {
+
 			Assert.assertTrue(false, "not able to validate Social login form");
 		}
-		
+
+	}
+
+	@Test(priority = 3)
+	// @Test (enabled = false)
+	public void ValidateForgotPassword() throws Exception {
+		System.out.println("Inside Test Forgot password");
+
+		if (mw.ForgetPassword()) {
+
+			System.out.println("Verified Forgot password");
+		} else {
+			Assert.assertTrue(false, "not able to Verify Forgot password  form");
+		}
+
 	}
 	
-	@Test
-	public void ValidateMakaanLogin() {
+	@Test(priority = 4)
+	// @Test (enabled = false)
+	public void ValidateResetPassword() throws Exception {
+		System.out.println("Inside Test Reset password");
+
+		if (mw.ResetPassword()) {
+
+			System.out.println("Verified Forgot password");
+		} else {
+			Assert.assertTrue(false, "not able to Verify Reset password  form");
+		}
+
+	}
+	
+	
+
+	@Test(priority = 5)
+	 //@Test (enabled = false)
+	public void ValidateMakaanLogin() throws Exception {
+		System.out.println("Inside Test Validate Makaan Login");
+
+		if (mw.MakaanLogin()) {
+			System.out.println("Verified Makaan password");
+		} else {
+			Assert.assertTrue(false, "not able to validate MakaanLogin form");
+		}
+
+	}
+
+	@Test(priority = 6)
+	 //@Test (enabled = false)
+	public void Logout() throws Exception {
+		System.out.println("Inside Test Validate Makaan Logout");
+		if (mw.MakaanLogout()) {
+			System.out.println("Verified Logout Functionality");
+		} else {
+			Assert.assertTrue(false, "not able to validate MakaanLogin form");
+		}
+
+	}
+
+	@Test(priority = 7)
+	// @Test (enabled = false)
+	public void Signup() {
 		try {
-			System.out.println("Inside Test Validate Login");
-			
-			mw.MakaanLogin();
-			Thread.sleep(3000);
+			System.out.println("Inside Test Validate Makaan Signup");
+
+			mw.MakaanSignup();
 		} catch (Exception e) {
 			e.printStackTrace();
 			Assert.assertTrue(false, "not able to validate MakaanLogin form");
 		}
-		
+
 	}
-	
-	@AfterClass 
-	public void Close(){
-		try{
+
+	@AfterClass
+	public void Close() {
+		try {
 			mw.CloseAll();
-		}catch(Exception e){
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		
+
 	}
 }
-

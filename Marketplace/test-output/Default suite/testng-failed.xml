@@ -5,8 +5,9 @@
     <classes>
       <class name="com.makaan.Test.LoginTest">
         <methods>
-          <include name="ValidateSocialLogin"/>
+          <include name="ValidateForgotPassword"/>
           <include name="InitiateDriver"/>
+          <include name="Close"/>
         </methods>
       </class> <!-- com.makaan.Test.LoginTest -->
     </classes>

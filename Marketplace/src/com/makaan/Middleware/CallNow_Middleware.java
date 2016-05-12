@@ -57,7 +57,7 @@ public class CallNow_Middleware {
 	 * object
 	 */
 	
-	public void OpenURL() throws NoSuchElementException, TimeoutException, IOException {
+	public void OpenURL() throws Exception {
 		Boolean result = false;
 
 		String URL=	ReadSheet("CAllNow","URL",2);
@@ -121,7 +121,7 @@ public class CallNow_Middleware {
 		result= wb.IsElementPresent(cn.CallNowForm);
 		if(result!=false){
 			System.out.println("CAll now form is present");
-			if(wb.findElementByXpath(cn.SellerImage)){
+			if(wb.IsElementPresent(cn.SellerImage)){
 				System.out.println("Seller Image is present on Lead form");
 			}
 			
